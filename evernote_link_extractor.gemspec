@@ -8,6 +8,7 @@ Gem::Specification.new do |spec|
   spec.version       = EvernoteLinkExtractor::VERSION
   spec.authors       = ["Andy Wenk"]
   spec.email         = ["andy@nms.de"]
+  spec.licenses      = ['Apache Version 2.0']
 
   spec.summary       = %q{Extract links from your exported Evernote notes}
   spec.description   = %q{This gem creates a CSV file with links from your exported Evernote notes in HTML files.}
