@@ -1,8 +1,18 @@
 # EvernoteLinkExtractor
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/evernote_link_extractor`. To experiment with that code, run `bin/console` for an interactive prompt.
+If you are planning to remove Evernote from your system due to any reason, you might want to keep the links you collected
+in your notes. This little gem will create a CSV file with a title and link of your collected URL's. It assumes you
+have exported your notes as html files. You can easily do this by following these instructions (also shown
+  when you run the program):
 
-TODO: Delete this and the text above, and describe your gem
+  * Open the Evernote programm
+  * click Notes in the navigation (on the left)
+  * klick ctrl+a to mark all Notes
+  * klick File > Export Notes... in the top navigation
+  * choose HTML as Format:
+  * choose a directory on a hard drive and click save
+
+A folder with the extension .enex is being created. All your Notes are stored there as HTML files.
 
 ## Installation
 
@@ -22,7 +32,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+When you have installed the gem, you can simply run it on the command line by typing
+
+    evernote_link_extractor
+
+You will be asked where the folder with your exported notes html files is. After that, a CSV file will be created
+in the directory wher you run the program. And that's it.
 
 ## Development
 
@@ -32,5 +47,4 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/evernote_link_extractor. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
-
+Bug reports and pull requests are welcome on GitHub at https://github.com/andywenk/evernote_link_extractor. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](contributor-covenant.org) code of conduct.
