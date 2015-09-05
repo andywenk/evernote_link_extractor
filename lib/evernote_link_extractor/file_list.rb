@@ -19,20 +19,20 @@ module EvernoteLinkExtractor
 
     # ask which directory has to be scanned
     def directory_to_scan
-      print 'What is the path to your .enex directory? (e.g.: ~/Documents/my_evernote.enex): '
+      Helper.question( 'What is the path to your .enex directory? (e.g.: ~/Documents/my_evernote.enex): ')
       @directory = full_path_to_directory(gets.chomp)
 
       if does_directory_exist?
         @directory = Pathname.new([@directory, '**/*'].join('/'))
       else
-        puts 'The directory does not exist ...'
+        Helper.warning("The directory does not exist ...\n")
         Helper.exit?
         directory_to_scan
       end
     end
 
     def scan_directory
-      puts "scanning #{directory} ...\n"
+      Helper.message("\nscanning #{directory} ...\n")
 
       Dir.glob(directory).each do |filename|
         next if File.directory?(filename)
@@ -43,7 +43,7 @@ module EvernoteLinkExtractor
 
     def check_if_files_exist
       return unless file_list.empty?
-      puts "There are no files in the directory ..."
+      Helper.warning("There are no files in the directory ...\n")
       Helper.exit?
       directory_to_scan
     end

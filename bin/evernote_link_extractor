@@ -4,12 +4,12 @@ require 'evernote_link_extractor'
 
 info = <<INFO
 
-            +++ Export Evernote links +++
+This script is going to create a CSV file from all the URL's with title from
+your exported HTML files creted with Evernote. Please note that this is tested
+with Evernote Version 6.1 on Mac OS X.
 
-This script is going to create a CSV file from all the URL's with title from your exported HTML files creted
-with Evernote. Please note that this is tested with Evernote Version 6.1 on Mac OS X.
-
-You need to export your Evernote notes first to HTML. To do so, follow these steps:
+You need to export your Evernote notes first to HTML. To do so, follow these
+steps:
 
   * Open the Evernote programm
   * click Notes in the navigation (on the left)
@@ -18,10 +18,13 @@ You need to export your Evernote notes first to HTML. To do so, follow these ste
   * choose HTML as Format:
   * choose a directory on a hard drive and click save
 
-A folder with the extension .enex is being created. All your Notes are stored there as HTML files.
+A folder with the extension .enex is being created. All your Notes are stored
+there as HTML files.
 
 INFO
 
-print info
+pastel = Pastel.new
+puts pastel.white.on_cyan.bold("                         +++ Export Evernote links +++                         ")
+print pastel.cyan.italic(info)
 
 EvernoteLinkExtractor.run

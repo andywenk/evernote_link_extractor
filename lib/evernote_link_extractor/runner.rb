@@ -18,17 +18,16 @@ module EvernoteLinkExtractor
 
     # this is the only public method to be called
     def run
-      print 'Do you want to create a CSV file now (yes|no)?: '
+      Helper.question('Do you want to create a CSV file now (yes|no)?: ')
       action = gets.chomp
 
       case action
       when 'no'
         Helper.close
       when 'yes'
-        puts 'Starting to create the CSV file ...'
         execute
       else
-        print 'please type yes or no: '
+        Helper.warning('please type yes or no: ')
         run
       end
     end
@@ -44,10 +43,16 @@ module EvernoteLinkExtractor
     end
 
     def show_summary
-      puts "   +++ Summary +++"
-      puts "files found in directory: #{file_list.length}"
-      puts "extracted links: #{link_list.length}"
-      puts "failures: #{@ll.failures}"
+
+summary = <<SUMMARY
+\nfiles found in directory: #{file_list.length}
+extracted links:          #{link_list.length}
+failures:                 #{@ll.failures}
+
+SUMMARY
+      puts
+      Helper.headline("          +++ Summary +++           ")
+      Helper.message(summary)
     end
   end
 end

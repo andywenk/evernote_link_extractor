@@ -2,6 +2,8 @@ module EvernoteLinkExtractor
   class CsvBuilder
 
     def self.create(link_list)
+      Helper.message("Starting to create the CSV file ...\n")
+
       CSV.open("evernote_link_export_#{Time.now.to_i}.csv", 'w', :write_headers=> true, :headers => csv_headers) do |csv|
         csv << rows(link_list)
       end
