@@ -1,11 +1,15 @@
 require 'pathname'
 require 'nokogiri'
 require 'csv'
+require_relative 'helper'
 
 module EvernoteLinkExtractor
-  class Csv
+
+  # This is the main class and is doing the whole job ... atm
+  class Runner
     attr_reader :user_home, :directory, :file_list, :link_list
 
+    # initializer with setting up some instance variables
     def initialize
       @user_home = ENV['HOME']
       @directory = ''
@@ -14,13 +18,14 @@ module EvernoteLinkExtractor
       @failures  = 0
     end
 
+    # this is the only public method to be called
     def run
       print 'Do you want to create a CSV file now (yes|no)?: '
       action = gets.chomp
 
       case action
       when 'no'
-        close
+        Helper.close
       when 'yes'
         puts 'Starting to create the CSV file ...'
         execute
@@ -32,15 +37,17 @@ module EvernoteLinkExtractor
 
     private
 
+    # execute all the needed steps
     def execute
       directory_to_scan
-      scan_folder
+      scan_directory
       check_if_files_exist
       create_link_list
       create_csv
       show_summary
     end
 
+    # ask which directory has to be scanned
     def directory_to_scan
       print 'What is the path to your .enex directory? (e.g.: ~/Documents/my_evernote.enex): '
       @directory = full_path_to_directory(gets.chomp)
@@ -49,12 +56,12 @@ module EvernoteLinkExtractor
         @directory = Pathname.new([@directory, '**/*'].join('/'))
       else
         puts 'The directory does not exist ...'
-        exit?
+        Helper.exit?
         directory_to_scan
       end
     end
 
-    def scan_folder
+    def scan_directory
       puts "scanning #{directory} ...\n"
 
       Dir.glob(directory).each do |filename|
@@ -67,7 +74,7 @@ module EvernoteLinkExtractor
     def check_if_files_exist
       return unless file_list.empty?
       puts "There are no files in the directory ..."
-      exit?
+      Helper.exit?
       directory_to_scan
     end
 
@@ -92,15 +99,7 @@ module EvernoteLinkExtractor
 
     # helper
 
-    def exit?
-      print 'Exit? (yes|no): '
-      close if gets.chomp == 'yes'
-    end
 
-    def close
-      puts 'Closing. Have a nice day.'
-      exit(0)
-    end
 
     def does_directory_exist?
       File.directory?(directory)
