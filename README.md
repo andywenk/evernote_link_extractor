@@ -14,6 +14,10 @@ have exported your notes as html files. You can easily do this by following thes
 
 A folder with the extension .enex is being created. All your Notes are stored there as HTML files.
 
+## This is Alpha software
+
+I created this little gem out of the need to somehow extract the Evernote URL's from my notes. Please be aware, that this is Alpha software and may produce bugs. Use it at your onw risk ;-).
+
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -38,6 +42,14 @@ When you have installed the gem, you can simply run it on the command line by ty
 
 You will be asked where the folder with your exported notes html files is. After that, a CSV file will be created
 in the directory wher you run the program. And that's it.
+
+## Bugs
+
+Please see and report any bugs to [Issues section of the Github repository](https://github.com/andywenk/evernote_link_extractor/issues)
+
+## Wishlist
+
+* configurable
 
 ## Development
 

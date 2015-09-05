@@ -3,6 +3,6 @@ require "evernote_link_extractor/csv"
 
 module EvernoteLinkExtractor
   def self.run
-    EvernoteLinkExtractor::Csv.new
+    Csv.new.run
   end
 end
