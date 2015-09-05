@@ -5,7 +5,7 @@ describe EvernoteLinkExtractor do
     expect(EvernoteLinkExtractor::VERSION).not_to be nil
   end
 
-  it 'does something useful' do
-    expect(false).to eq(true)
+  it 'has method run' do
+    expect(EvernoteLinkExtractor.respond_to?(:run)).to be_truthy
   end
 end
