@@ -1,5 +1,8 @@
 require "evernote_link_extractor/version"
+require "evernote_link_extractor/csv"
 
 module EvernoteLinkExtractor
-  # Your code goes here...
+  def self.run
+    EvernoteLinkExtractor::Csv.new
+  end
 end
