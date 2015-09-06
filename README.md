@@ -1,5 +1,7 @@
 # EvernoteLinkExtractor
 
+[![Build Status](https://travis-ci.org/andywenk/evernote_link_extractor.svg?branch=master)](https://travis-ci.org/andywenk/evernote_link_extractor)
+
 If you are planning to remove Evernote from your system due to any reason, you might want to keep the links you collected
 in your notes. This little gem will create a CSV file with a title and link of your collected URL's. It assumes you
 have exported your notes as html files. You can easily do this by following these instructions (also shown
