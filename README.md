@@ -47,10 +47,6 @@ in the directory wher you run the program. And that's it.
 
 Please see and report any bugs to [Issues section of the Github repository](https://github.com/andywenk/evernote_link_extractor/issues)
 
-## Wishlist
-
-* configurable
-
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
