@@ -45,6 +45,8 @@ When you have installed the gem, you can simply run it on the command line by ty
 You will be asked where the folder with your exported notes html files is. After that, a CSV file will be created
 in the directory wher you run the program. And that's it.
 
+![cli example](https://drive.google.com/open?id=0B2xXhdpvuHcGOFg1czE2U2NzRVE)
+
 ## Bugs
 
 Please see and report any bugs to [Issues section of the Github repository](https://github.com/andywenk/evernote_link_extractor/issues)
