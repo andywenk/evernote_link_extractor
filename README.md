@@ -45,7 +45,7 @@ When you have installed the gem, you can simply run it on the command line by ty
 You will be asked where the folder with your exported notes html files is. After that, a CSV file will be created
 in the directory wher you run the program. And that's it.
 
-![cli example](https://drive.google.com/open?id=0B2xXhdpvuHcGOFg1czE2U2NzRVE)
+![cli example](https://drive.google.com/uc?export=view&id=0B2xXhdpvuHcGOFg1czE2U2NzRVE)
 
 ## Bugs
 
